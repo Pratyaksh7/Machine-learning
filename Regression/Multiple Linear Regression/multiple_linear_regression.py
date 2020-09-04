@@ -28,3 +28,9 @@ y_pred = regressor.predict(X_test)
 np.set_printoptions(precision=2)
 print(np.concatenate((y_pred.reshape(len(y_pred),1) , y_test.reshape(len(y_test),1)), axis=1))
 # this is used to concatenate the y_pred -> predicted vaues to the y_test -> actual values rowise instead of columnwise
+
+# Making a single prediction (for example the profit of a startup with R&D Spend = 160000,
+# Administration Spend = 130000, Marketing Spend = 300000 and State = 'California')
+#     example:-
+                # regressor.predict([[1, 0, 0, 160000, 130000, 300000]])
+                # output-> [181566.92]
