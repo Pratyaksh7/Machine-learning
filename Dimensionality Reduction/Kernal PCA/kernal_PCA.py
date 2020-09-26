@@ -1,4 +1,4 @@
-# Principal component analysis (PCA)
+# Kernal Principal component analysis (PCA)
 # importing the libraries
 import numpy as np
 import pandas as pd
@@ -23,11 +23,11 @@ X_test = sc.transform(X_test)
 # print(X_train)
 # print(X_test)
 
-# Applying PCA
-from sklearn.decomposition import PCA
-pca = PCA(n_components=2)
-X_train = pca.fit_transform(X_train)
-X_test = pca.transform(X_test)
+# Applying Kernel PCA
+from sklearn.decomposition import KernelPCA
+kpca = KernelPCA(n_components=2, kernel='rbf')   # radial base function
+X_train = kpca.fit_transform(X_train)
+X_test = kpca.transform(X_test)
 
 
 # Training the Logistic Regression model on the training set
@@ -82,4 +82,4 @@ plt.ylabel('PC2')
 plt.legend()
 plt.show()
 
-# Accuracy is 0.9777777777777777
+# Accuracy is 1.0 i.e., 100%
